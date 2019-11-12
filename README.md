@@ -18,13 +18,13 @@
 - has_many :users, through: :uses_groups
 - has_many :messages
 
-## messageテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |body|text|null: false|
 |image|string||
 |user_id|integer|null: false, foreign_key: true|
-|group_id|integer||null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Assosiation
 - belongs_to :user
 - belongs_to :group
