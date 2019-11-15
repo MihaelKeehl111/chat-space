@@ -1,0 +1,41 @@
+@import "./variable";
+
+.side-box {
+  width: 300px;
+  float: left;
+  .header {
+    background-color: #253141;
+    display: $display;
+    justify-content: flex-end;
+    font-weight: $fontweight; 
+    height: 100px;
+    align-items: center;
+    padding: 0 20px;
+    &__name {
+    color: $whitecolor;
+    font-size: 16px;
+    margin-right: auto;
+    }
+    &__icon {
+    color: $whitecolor;
+    }  
+  }
+
+  .group {
+    background-color: #2f3e51;
+    padding: 20px 20px 0 20px;
+    height: calc(100vh - 120px);
+    overflow: scroll;
+    &__name {
+      color: $whitecolor;
+      font-size: 15px; 
+      font-weight: $fontweight;
+    }
+    &__message {
+      color: $whitecolor;
+      font-size: 11px;
+      margin-bottom: 40px;
+      font-weight: $fontweight;
+    }
+  }
+}
