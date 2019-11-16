@@ -2,8 +2,8 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false, unique: true, index: true|
-|name|string|null: false, unique: true|
+|email|string|null: false, unique: true|
+|name|string|null: false, unique: true, index: true|
 |passwoord|string|null: false, unique: true|
 ### Assosiation
 - has_many :messages
