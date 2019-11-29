@@ -2,23 +2,18 @@
   .chat-header
     .chat-header__left
       .chat-header__left__chat-group
-        groupname
+        = current_user.groups.name
       .chat-header__left__member
-        member
-    = link_to "Edit", "#", class: "chat-header__right"
+        = current_user.name
+    = link_to "Edit", edit_group_path(current_user), class: "chat-header__right"
   .message
-    .message__box
-      .message__box__name
-        name
-      .message__box__date
-        date
-    .message__text
-      message
+    = render @messages
   .form
     .form__box
-      %input.form__box__text{placeholder: "type a message", type: "text"}/
-      %label
-        %span{class: "form__box__image"}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__box__text', placeholder: 'type a message'
+        = f.label :image, class: "form__box__image" do
+          -# = f.span class: "form__box__image" do
           = icon('fas', 'image')
-          %input{type: "file", class: "form__box__file"}
-    %input.form__btn{type: "submit", name: "commit", value: "Send"}/
+        = f.file_field :image, class: "form__box__file"
+        = f.submit "Send", class: "form__btn"

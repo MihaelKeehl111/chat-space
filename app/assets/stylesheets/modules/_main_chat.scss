@@ -66,24 +66,25 @@
   &__box {
     position: relative;
     width: 100%;
+    float: left;
     &__text {
       font-size: 16px;
       color: $blackcolor;
       height: 50px;
-      width: 100%;
+      width: calc( 100% - 200px);
       padding-left: 10px;
     }
     &__image {
       height: 50px;
       position: absolute;
-      right: 25px;
+      right: 200px;
       top: 10px;
       cursor: crosshair;
       font-size: 1.5em
     }
     &__file {
       display: none;
-    }
+    }  
   }  
   &__btn {
     height: 50px;
