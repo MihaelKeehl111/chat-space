@@ -23,14 +23,14 @@ class GroupsController < ApplicationController
   
   def update
     if @group.update(group_params)
-      redirect_to root_path, notice: 'グループを更新しました'
+      redirect_to "http://localhost:3000/groups/1/messages", notice: 'グループを更新しました'
     else
       render :edit
     end
   end
   
   private
-  
+
   def group_params
     params.require(:group).permit(:name, user_ids: [] )
   end
