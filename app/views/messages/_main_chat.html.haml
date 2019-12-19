@@ -2,7 +2,7 @@
   .chat-header
     .chat-header__left
       .chat-header__left__chat-group
-        = current_user.groups.name
+        = @group.name
       .chat-header__left__member
         = current_user.name
     = link_to "Edit", edit_group_path(current_user), class: "chat-header__right"
