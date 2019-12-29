@@ -4,8 +4,9 @@
       .chat-header__left__chat-group
         = @group.name
       .chat-header__left__member
-        = current_user.name
-    = link_to "Edit", edit_group_path(current_user), class: "chat-header__right"
+        - @group.users.each do |user|
+          = user.name
+    = link_to "Edit", edit_group_path(@group), class: "chat-header__right"
   .message
     = render @messages
   .form
